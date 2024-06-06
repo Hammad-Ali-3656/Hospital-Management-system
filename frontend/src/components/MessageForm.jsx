@@ -14,7 +14,7 @@ const MessageForm = () => {
     try {
       await axios
         .post(
-          process.env.REACT_APP_BACKEND_URL + "/api/v1/message/send",
+          import.meta.env.VITE_BACKEND_URL + "/api/v1/message/send",
           { firstName, lastName, email, phone, message },
           {
             withCredentials: true,

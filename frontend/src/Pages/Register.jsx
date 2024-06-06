@@ -20,10 +20,11 @@ const Register = () => {
 
   const handleRegistration = async (e) => {
     e.preventDefault();
+    console.log('oyeeeeeeee')
     try {
       await axios
         .post(
-          process.env.REACT_APP_BACKEND_URL + "api/v1/user/patient/register",
+          import.meta.env.VITE_BACKEND_URL + "api/v1/user/patient/register",
           { firstName, lastName, email, phone, nic, dob, gender, password },
           {
             withCredentials: true,
@@ -61,7 +62,7 @@ const Register = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat culpa
           voluptas expedita itaque ex, totam ad quod error?
         </p>
-        <form onSubmit={handleRegistration}>
+        <form>
           <div>
             <input
               type="text"
@@ -133,7 +134,7 @@ const Register = () => {
             </Link>
           </div>
           <div style={{ justifyContent: "center", alignItems: "center" }}>
-            <button type="submit">Register</button>
+            <button onClick={handleRegistration} type="submit">Register</button>
           </div>
         </form>
       </div>
