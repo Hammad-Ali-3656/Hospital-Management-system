@@ -1,2 +1,8 @@
 node_modules
 backend/config.env
+
+# Real configuration and secrets stay out of git: set them in the hosting provider's
+# environment variables. backend/.env.example lists the variables the server reads.
+.env
+.env.*
+!.env.example
